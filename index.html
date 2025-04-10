@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#FrankMyMP #FrankMyChoice</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .card {
+      margin: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .popup {
+      background: #1f7d34;
+      color: white;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 1000;
+    }
+
+    button {
+      background-color: #2d87f0;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #2168c5;
+    }
+
+    .like-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .thanks-message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup" id="popup">
+    <p>💬 Love Hon. Frank? Share this on WhatsApp!</p>
+    <button onclick="shareNow()">📤 Share</button>
+  </div>
+
+  <header>
+    <h1>#FrankMyMP #FrankMyChoice</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <img src="https://raw.githubusercontent.com/TumwekwaseAmiim/HonFrankTumwebazeLegacy/main/hon%20frank%20with%20president%20and%20memebrsof%20states.jpg" alt="Frank with President Museveni" />
+      <p>
+        <strong>#FrankMyMP ##FrankMyChoice:</strong> Hon Frank is well networked both in Uganda, Africa and the world.
+        It's these great friendship networks that he has built that enable him to be a transformative leader for our community (Kibale East).<br><br>
+        Frank, itwe abanya-Rwamwanja na Kamwenge nitumwesimisa (very proud of him). He is our choice 2026.
+      </p>
+    </section>
+
+    <div id="thanks" style="display:none;" class="thanks-message">
+      💚 Thanks for loving Hon. Frank!
+    </div>
+
+    <div class="like-section">
+      <p>If you believe in Hon. Frank, give him a 👍 below:</p>
+      <button onclick="likePage()">👍 Like</button> <span id="likeCount">0</span> Likes
+    </div>
+  </main>
+
+  <script>
+    function shareNow() {
+      const currentUrl = window.location.href;
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentUrl)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    function showThanksMessage() {
+      document.getElementById('thanks').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('thanks').style.display = 'none';
+      }, 3000);
+    }
+
+    let likeCount = 0;
+    function likePage() {
+      likeCount++;
+      document.getElementById('likeCount').innerText = likeCount;
+    }
+
+    window.onload = function () {
+      document.getElementById('popup').style.display = 'block';
+    };
+  </script>
+
+</body>
+</html>
