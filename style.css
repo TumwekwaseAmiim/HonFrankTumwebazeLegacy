@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #008CBA;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.image-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.image-text-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-text-container p {
+    font-size: 1rem;
+    color: #555;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.like-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#likeButton {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#likeButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#likeCount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.join-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
+.whatsapp-link, .tiktok-link {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.tiktok-link {
+    background-color: #000;
+}
+
+.counter {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.counter h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    .image-text-container p {
+        font-size: 1rem;
+    }
+
+    #likeButton {
+        padding: 8px 15px;
+    }
+
+    .whatsapp-link, .tiktok-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .counter h2 {
+        font-size: 1.2rem;
+    }
+}
